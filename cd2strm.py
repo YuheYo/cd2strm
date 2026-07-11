@@ -21,14 +21,33 @@ def find_bdmv(source):
     count = 0
 
     for bdmv in source.rglob("BDMV"):
+
         if not bdmv.is_dir():
             continue
 
         movie = bdmv.parent
 
-        print(f"Found BDMV:")
+        stream = bdmv / "STREAM"
+
+        if not stream.exists():
+            print("  STREAM folder missing")
+            continue
+
+        m2ts_files = list(stream.glob("*.m2ts"))
+
+        if not m2ts_files:
+            print("  No m2ts found")
+            continue
+
+        largest = max(m2ts_files, key=lambda f: f.stat().st_size)
+
+        size = largest.stat().st_size / 1024 / 1024 / 1024
+
+        print("Found BDMV:")
         print(f"  Movie : {movie.name}")
         print(f"  Path  : {movie}")
+        print(f"  Main  : {largest.name}")
+        print(f"  Size  : {size:.2f} GB")
 
         count += 1
 
