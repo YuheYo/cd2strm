@@ -1,6 +1,5 @@
 source:
-  - /mnt/usb2-1/CloudDrive/CloudDrive/原盘电影
-  - /mnt/usb2-1/CloudDrive/CloudDrive/电视剧
+  - /mnt/usb2-1/CloudDrive/CloudDrive
 
 output: /mnt/usb2-1/EmbySTRM
 
