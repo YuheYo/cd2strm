@@ -1,10 +1,9 @@
 source:
-  - /mnt/usb2-1/CloudDrive/CloudDrive
+  - /media
 
-output: /mnt/usb2-1/EmbySTRM
+output: /output
 
-copy_images: true
-
-copy_nfo: false
-
-scan_interval: 3600
+image_files:
+  - poster.jpg
+  - fanart.jpg
+  - clearlogo.png
