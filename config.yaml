@@ -1,1 +1,11 @@
+source:
+  - /mnt/usb2-1/CloudDrive/CloudDrive/原盘电影
+  - /mnt/usb2-1/CloudDrive/CloudDrive/电视剧
 
+output: /mnt/usb2-1/EmbySTRM
+
+copy_images: true
+
+copy_nfo: false
+
+scan_interval: 3600
